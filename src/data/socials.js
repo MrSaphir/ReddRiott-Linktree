@@ -25,7 +25,7 @@ export const ITEMS = [
     handle: "@redd_riott_band",
     href: "https://threads.net/@redd_riott_band",
     iconType: "flaticon",
-    iconClass: "fi fi-brands-threads",
+    iconClass: "fa-brands fa-threads",
     color: "#ffffff",
     cta: "FOLLOW",
   },

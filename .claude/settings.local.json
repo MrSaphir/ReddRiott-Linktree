@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:cdn-uicons.flaticon.com)",
+      "WebFetch(domain:www.flaticon.com)"
+    ]
+  }
+}
