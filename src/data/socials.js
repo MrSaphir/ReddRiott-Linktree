@@ -8,6 +8,10 @@ export const ITEMS = [
     iconClass: "fi fi-brands-instagram",
     color: "#e1306c",
     cta: "FOLLOW",
+    stats: [
+      { tag: "FOL", value: "156", color: "#e1306c" },
+      { tag: "PST", value: "3", color: "#f77737" },
+    ],
   },
   {
     id: "facebook",
@@ -18,6 +22,9 @@ export const ITEMS = [
     iconClass: "fi fi-brands-facebook",
     color: "#1877f2",
     cta: "FOLLOW",
+    stats: [
+      { tag: "FOL", value: "7", color: "#1877f2" },
+    ],
   },
   {
     id: "threads",
@@ -28,6 +35,9 @@ export const ITEMS = [
     iconClass: "fa-brands fa-threads",
     color: "#ffffff",
     cta: "FOLLOW",
+    stats: [
+      { tag: "FOL", value: "1", color: "#aaaaaa" },
+    ],
   },
   {
     id: "discord",
@@ -38,6 +48,9 @@ export const ITEMS = [
     iconClass: "fi fi-brands-discord",
     color: "#5865f2",
     cta: "JOIN",
+    stats: [
+      { tag: "MBR", value: "0", color: "#5865f2" },
+    ],
   },
   {
     id: "whatsapp",
@@ -48,5 +61,8 @@ export const ITEMS = [
     iconClass: "fi fi-brands-whatsapp",
     color: "#25d366",
     cta: "JOIN",
+    stats: [
+      { tag: "ABN", value: "39", color: "#25d366" },
+    ],
   },
 ];

@@ -4,13 +4,39 @@ import logoImg from "./assets/reddriott.png";
 import "./Socials.css";
 import { ITEMS } from "./data/socials";
 
+function formatCount(n) {
+  if (n == null || isNaN(n)) return "—";
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(".0", "") + "M";
+  if (n >= 1_000)     return (n / 1_000).toFixed(1).replace(".0", "") + "K";
+  return String(n);
+}
+
 export default function Socials() {
-  const [mounted, setMounted] = useState(false);
+  const [mounted,  setMounted]  = useState(false);
+  const [dynStats, setDynStats] = useState({});
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 80);
     return () => clearTimeout(t);
   }, []);
+
+  // Discord — API publique, pas d'auth requise
+  useEffect(() => {
+    fetch("https://discord.com/api/v9/invites/QuaybkRVXY?with_counts=true")
+      .then(r => r.json())
+      .then(data => {
+        if (data.approximate_member_count != null) {
+          setDynStats(prev => ({
+            ...prev,
+            discord: { MBR: formatCount(data.approximate_member_count) },
+          }));
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const getStatValue = (itemId, tag, fallback) =>
+    dynStats[itemId]?.[tag] ?? fallback;
 
   return (
     <div id="lt-root">
@@ -53,6 +79,20 @@ export default function Socials() {
               <div className="lt-link-text">
                 <span className="lt-link-name">{item.label}</span>
                 <span className="lt-link-handle">{item.handle}</span>
+              </div>
+
+              <div className="lt-stats">
+                {item.stats.map(s => (
+                  <div className="lt-stat" key={s.tag}>
+                    <span className="lt-stat-tag" style={{ color: s.color, borderColor: s.color }}>
+                      {s.tag}
+                    </span>
+                    <span className="lt-stat-num">
+                      {getStatValue(item.id, s.tag, s.value)}
+                    </span>
+                    <div className="lt-stat-bar" style={{ background: s.color }} />
+                  </div>
+                ))}
               </div>
 
               <span className="lt-link-cta" style={{ color: item.color }}>
