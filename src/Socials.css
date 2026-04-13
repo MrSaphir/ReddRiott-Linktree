@@ -150,14 +150,6 @@
   transition: background 0.18s ease, transform 0.18s ease;
 }
 
-.lt-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(4px);
-}
-
-.lt-link:active {
-  transform: translateX(2px) scale(0.99);
-}
 
 /* colored left accent bar */
 .lt-link-accent {
@@ -177,10 +169,6 @@
   opacity: 0.75;
   transition: opacity 0.18s ease;
 }
-.lt-link:hover .lt-link-icon {
-  opacity: 1;
-}
-
 /* Flaticon brand icon */
 .lt-link-icon-flat {
   flex-shrink: 0;
@@ -191,10 +179,6 @@
   opacity: 0.85;
   transition: opacity 0.18s ease;
 }
-.lt-link:hover .lt-link-icon-flat {
-  opacity: 1;
-}
-
 /* Text icon (Facebook, Threads, Discord, WhatsApp) */
 .lt-link-icon-text {
   flex-shrink: 0;
@@ -206,10 +190,6 @@
   opacity: 0.85;
   transition: opacity 0.18s ease;
 }
-.lt-link:hover .lt-link-icon-text {
-  opacity: 1;
-}
-
 .lt-link-text {
   flex: 1;
   display: flex;
@@ -250,10 +230,6 @@
   opacity: 0.8;
   transition: opacity 0.18s ease;
 }
-.lt-link:hover .lt-link-cta {
-  opacity: 1;
-}
-
 /* ── Footer ── */
 .lt-footer {
   font-family: 'Barlow Condensed', sans-serif;
@@ -263,4 +239,89 @@
   text-transform: uppercase;
   margin: 0;
   user-select: none;
+}
+
+/* ── Hover : uniquement sur écrans avec souris ── */
+@media (hover: hover) {
+  .lt-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+  }
+  .lt-link:hover .lt-link-icon  { opacity: 1; }
+  .lt-link:hover .lt-link-icon-flat { opacity: 1; }
+  .lt-link:hover .lt-link-icon-text { opacity: 1; }
+  .lt-link:hover .lt-link-cta   { opacity: 1; }
+}
+
+/* ── Tap feedback (mobile) ── */
+.lt-link:active {
+  background: rgba(255, 255, 255, 0.13);
+  transform: scale(0.98);
+}
+
+/* ── Petits téléphones (≤ 430px) ── */
+@media (max-width: 430px) {
+  .lt-container {
+    gap: 18px;
+    padding: 32px 0 28px;
+  }
+
+  .lt-header {
+    gap: 6px;
+  }
+
+  .lt-genre {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .lt-desc {
+    font-size: 14px;
+  }
+
+  .lt-links {
+    gap: 8px;
+  }
+
+  .lt-link {
+    height: 58px;
+    gap: 12px;
+  }
+
+  .lt-link-name {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .lt-link-handle {
+    font-size: 12px;
+  }
+}
+
+/* ── Très petits écrans (≤ 360px) ── */
+@media (max-width: 360px) {
+  .lt-container {
+    gap: 14px;
+    padding: 24px 0 20px;
+  }
+
+  .lt-link {
+    height: 54px;
+    gap: 10px;
+  }
+
+  .lt-link-icon,
+  .lt-link-icon-flat {
+    font-size: 20px;
+    width: 22px;
+  }
+
+  .lt-link-name {
+    font-size: 18px;
+  }
+
+  .lt-link-cta {
+    font-size: 12px;
+    padding-right: 10px;
+  }
 }
