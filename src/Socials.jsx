@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import bgVideo from "./assets/main3.mp4";
+import bgVideo from "./assets/background.mp4";
 import logoImg from "./assets/reddriott.png";
 import "./Socials.css";
 import { ITEMS } from "./data/socials";
