@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import bgVideo from "./assets/background.mp4";
+import posterImg from "./assets/poster.jpg";
 import logoImg from "./assets/reddriott.png";
 import newsign from "./assets/newsign.png";
 import "./Socials.css";
@@ -41,7 +42,7 @@ export default function Socials() {
 
   return (
     <div id="lt-root">
-      <video className="lt-bg" src={bgVideo} autoPlay loop muted playsInline />
+      <video className="lt-bg" src={bgVideo} poster={posterImg} autoPlay loop muted playsInline />
       <div className="lt-overlay" />
 
       <div className={`lt-container${mounted ? " mounted" : ""}`}>
