@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import bgVideo from "./assets/background.mp4";
 import logoImg from "./assets/reddriott.png";
+import newsign from "./assets/newsign.png";
 import "./Socials.css";
 import { ITEMS } from "./data/socials";
 
@@ -65,6 +66,7 @@ export default function Socials() {
               style={{ animationDelay: `${i * 80 + 160}ms` }}
             >
               <div className="lt-link-accent" style={{ background: item.color }} />
+              {item.isNew && <img className="lt-badge-new" src={newsign} alt="NEW" />}
 
               {item.iconType === "img" ? (
                 <img className="lt-link-icon" src={item.icon} alt={item.label} />
