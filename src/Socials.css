@@ -601,6 +601,19 @@
     gap: 3px;
     text-align: center;
   }
+
+  /* Réduction légère des éléments des barres */
+  .lt-bar              { height: 54px; }
+  .lt-bar-outer.active .lt-bar     { height: 80px; }
+  .lt-bar-outer.active .lt-bar-red { height: 80px; }
+  .lt-bar-icon         { font-size: 17px; }
+  .lt-bar-label        { font-size: 22px; letter-spacing: 3px; }
+  .lt-bar-handle       { font-size: 11px; }
+  .lt-bar-stat-num     { font-size: 20px; }
+  .lt-bar-stat-tag     { font-size: 8px; }
+  .lt-bar-cta          { font-size: 10px; letter-spacing: 1.5px; padding: 2px 6px; }
+  .lt-bar-content      { padding: 0 12px; }
+  .lt-bar-stats        { gap: 8px; padding-right: 12px; }
 }
 
 /* Très petits téléphones : cacher le nom, garder juste l'icône */
