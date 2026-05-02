@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,700;1,400&display=swap');
-
 /* ════════════════════════════════════════════════════════════
    ROOT
 ════════════════════════════════════════════════════════════ */
@@ -30,10 +28,29 @@
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.55) 0%,
-    rgba(8, 0, 0, 0.72) 60%,
+    rgba(8, 0, 0, 0) 60%,
     rgba(0, 0, 0, 0.88) 100%
   );
   pointer-events: none;
+}
+
+/* ════════════════════════════════════════════════════════════
+   LOGO MOBILE
+════════════════════════════════════════════════════════════ */
+
+.lt-mobile-logo {
+  display: none;
+  width: clamp(270px, 70vw, 220px);
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  margin-bottom: 50px;
+  align-self: center;
+  filter: drop-shadow(0 2px 12px rgba(196, 0, 26, 0.35));
+}
+
+@media (max-width: 768px) {
+  .lt-mobile-logo { display: block; }
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -114,11 +131,8 @@
   z-index: 0;
 }
 .lt-bar-outer.active .lt-bar-fill {
-  clip-path: polygon(20% 0, 100% 0, calc(100% - 14px) 100%, 38% 100%);
+  clip-path: polygon(16% 0, 100% 0, calc(100% - 14px) 100%, 30% 100%);
 }
-
-/* ── Ombre (désactivée) ── */
-.lt-bar-shade { display: none; }
 
 /* ════════════════════════════════════════════════════════════
    CONTENU
@@ -136,22 +150,12 @@
 .lt-bar-role {
   flex-shrink: 0;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 46px; letter-spacing: -1px;
+  font-size: 60px; letter-spacing: -1px;
   color: #ffffff;
-  transform: rotate(-30deg);
+  transform: rotate(-20deg);
   user-select: none; line-height: 1;
   padding: 0 14px 0 6px;
   opacity: 0.9;
-}
-
-/* Portrait personnage */
-.lt-bar-char {
-  position: absolute;
-  top: 0; left: 100px;
-  height: 100%; width: auto; max-width: 150px;
-  object-fit: cover; object-position: top;
-  pointer-events: none; z-index: 3;
-  clip-path: polygon(18px 0%, 100% 0%, calc(100% - 18px) 100%, 0% 100%);
 }
 
 /* Zone centrale : icône + nom + handle */
@@ -506,57 +510,6 @@
 }
 
 /* ════════════════════════════════════════════════════════════
-   LOGO AU-DESSUS DES BARRES
-════════════════════════════════════════════════════════════ */
-
-.lt-bars-logo-wrap {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 0 74px 13vw;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-12px);
-  transition: opacity 0.5s ease 0.1s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
-}
-
-.lt-bars-logo-wrap.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.lt-bars-logo {
-  height: 250px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 24px rgba(196, 0, 26, 0.6));
-  user-select: none;
-  flex-shrink: 0;
-}
-
-/* Sous-texte — masqué par défaut (desktop) */
-.lt-bars-logo-sub {
-  display: none;
-}
-
-.lt-bars-logo-genre {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 13px;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.35);
-  line-height: 1.4;
-}
-
-.lt-bars-logo-desc {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.62);
-  line-height: 1.4;
-}
-
-/* ════════════════════════════════════════════════════════════
    RESPONSIVE — après les styles de base (ordre correct)
 ════════════════════════════════════════════════════════════ */
 
@@ -568,14 +521,22 @@
 @media (max-width: 1700px) {
   .lt-bar     { width: 45vw; }
   .lt-bar-red { width: 45vw; }
-  .lt-bar-char  { display: none; }
   .lt-bar-outer.active .lt-bar-fill {
-    clip-path: polygon(14% 0, 100% 0, calc(100% - 14px) 100%, 32% 100%);
+  clip-path: polygon(18% 0, 100% 0, calc(100% - 14px) 100%, 24% 100%);
   }
 }
-/* Mobile : adapter largeur, cacher éléments desktop */
+@media (max-width: 1400px) {
+  .lt-bar-outer.active .lt-bar-fill {
+  clip-path: polygon(20% 0, 100% 0, calc(100% - 14px) 100%, 24% 100%);
+  }
+}
+@media (max-width: 1300px) {
+  .lt-bar-role        { display: none; }
+  .lt-bar-outer.active .lt-bar-fill {
+  clip-path: polygon(0% 0, 100% 0, calc(100% - 14px) 100%, 20% 100%);
+  }
+}
 @media (max-width: 768px) {
-  .lt-bar-char        { display: none; }
   .lt-bar-role        { display: none; }
   .lt-kbd-hints       { display: none; }
   .lt-right-nav       { display: none; }
@@ -584,36 +545,13 @@
   .lt-bar         { width: 96vw; }
   .lt-bar-red     { width: 96vw; }
   .lt-bar-outer.active .lt-bar-fill {
-    clip-path: polygon(0% 0, 100% 0, calc(100% - 14px) 100%, 18% 100%);
+    clip-path: polygon(0% 0, 100% 0, calc(100% - 14px) 100%, 10% 100%);
   }
-  .lt-bars-logo      { height: 250px; }
-  .lt-bars-logo-wrap {
-    padding: 0 0 32px 0;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .lt-bars-logo-sub {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    text-align: center;
-  }
+}
 
-  /* Réduction légère des éléments des barres */
-  .lt-bar              { height: 54px; }
-  .lt-bar-outer.active .lt-bar     { height: 80px; }
-  .lt-bar-outer.active .lt-bar-red { height: 80px; }
-  .lt-bar-icon         { font-size: 17px; }
-  .lt-bar-label        { font-size: 22px; letter-spacing: 3px; }
-  .lt-bar-handle       { font-size: 11px; }
-  .lt-bar-stat-num     { font-size: 20px; }
-  .lt-bar-stat-tag     { font-size: 8px; }
-  .lt-bar-cta          { font-size: 10px; letter-spacing: 1.5px; padding: 2px 6px; }
-  .lt-bar-content      { padding: 0 12px; }
-  .lt-bar-stats        { gap: 8px; padding-right: 12px; }
+/* Petits téléphones : cacher les stats et le CTA */
+@media (max-width: 460px) {
+  .lt-bar-stats { display: none; }
 }
 
 /* Très petits téléphones : cacher le nom, garder juste l'icône */

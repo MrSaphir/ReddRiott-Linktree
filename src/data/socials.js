@@ -42,7 +42,7 @@ export const ITEMS = [
     handle: "@redd_riott_band",
     href: "https://threads.net/@redd_riott_band",
     iconClass: "fa-brands fa-threads",
-    color: "#ffffff",
+    color: "#222222", 
     cta: "FOLLOW",
     stats: [
       { tag: "FOL", value: "1",  color: "#aaaaaa" },
@@ -52,6 +52,24 @@ export const ITEMS = [
       { label: "FIRST THREAD",                               meta: "LIRE →", href: "https://www.threads.com/@redd_riott_band/post/DVuwbJIjNJy?xmt=AQF0AxubMxhys-v-aaYgdZ0XY74PxOD1K0OdQuJ7k0dcmQ" },
       { label: "PHOTOS DU CONCERT À L'ALCHIMISTE BAR À SON", meta: "LIRE →", href: "https://www.threads.com/@redd_riott_band/post/DVzK4T4DvhF?xmt=AQF0DlbGN7bX8BSbZRWsa7cJM9rQUWYUS3L6WvRm7u8osA" },
       { label: "RÉPÈT' A LA NEF",                            meta: "LIRE →", href: "https://www.threads.com/@redd_riott_band/post/DXNntmDiKrz?xmt=AQF0DlbGN7bX8BSbZRWsa7cJM9rQUWYUS3L6WvRm7u8osA" },
+    ],
+  },
+  {
+    id: "tiktok",
+    label: "TIKTOK",
+    handle: "@redd.riott",
+    href: "https://www.tiktok.com/@redd.riott",
+    iconClass: "fa-brands fa-tiktok",
+    color: "#ff0050",
+    cta: "FOLLOW",
+    stats: [
+      { tag: "FOL", value: "1",  color: "#ff0050" },
+      { tag: "VID", value: "2",  color: "#69c9d0" },
+    ],
+    rightItems: [
+      { label: "VIDÉOS À VENIR",   desc: "Clips, coulisses et moments live" },
+      { label: "LIVES & SESSIONS", desc: "Performances et instants du groupe en direct" },
+      { label: "REJOINS-NOUS",     desc: "Suis le compte pour ne rien rater !" },
     ],
   },
   {
